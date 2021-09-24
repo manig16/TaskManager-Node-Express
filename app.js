@@ -3,18 +3,19 @@ const app = express()
 const tasks = require('./routes/taskRoute')
 const connectMongoDB = require('./database/connect')
 require('dotenv').config()
+const notFound = require('./middleware/not-found')
 
 const port = 3000
 
+// middleware
 app.use(express.json())
 
-app.use('/api/v1/tasks', tasks)
 
-// get all tasks
-// get one task
-// add a task
-// update a task
-// delete a task
+// routes
+app.use('/api/v1/tasks', tasks)
+app.use(notFound)
+
+
 
 const start = async() => {
     try {
