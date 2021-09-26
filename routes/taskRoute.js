@@ -1,16 +1,16 @@
-const express = require('express')
-const router = express.Router()
-const {getAllTasks, getTask, createTask,
-    updateTask, deleteTask } = require('../controllers/taskController')
+const express = require('express');
 
-router.route('/')
-    .get(getAllTasks)
-    .post(createTask)
+const router = express.Router();
+const {
+  getAllTasks,
+  getTask,
+  createTask,
+  updateTask,
+  deleteTask,
+} = require('../controllers/taskController');
 
-router.route('/:id')
-    .get(getTask)
-    .patch(updateTask)
-    .delete(deleteTask)
+router.route('/').get(getAllTasks).post(createTask);
 
-module.exports = router
+router.route('/:id').get(getTask).patch(updateTask).delete(deleteTask);
 
+module.exports = router;
