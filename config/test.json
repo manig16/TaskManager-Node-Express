@@ -1,0 +1,5 @@
+{
+  "LOG_FILE" : "taskAPI.log",
+  "LOG_FORMAT" : "common",
+  "LOG_INTERVAL" : "1d"
+}
